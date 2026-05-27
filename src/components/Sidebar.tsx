@@ -16,6 +16,7 @@ import {
   ChevronLeft
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePortfolio } from "@/context/PortfolioContext";
 
 interface SidebarProps {
   darkMode: boolean;
@@ -34,6 +35,7 @@ const menuItems = [
 ];
 
 export default function Sidebar({ darkMode, setDarkMode, isCollapsed, setIsCollapsed }: SidebarProps) {
+  const { profile } = usePortfolio();
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -144,10 +146,10 @@ export default function Sidebar({ darkMode, setDarkMode, isCollapsed, setIsColla
             {/* Profile */}
             <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-800/50 mb-6">
               <div className="h-10 w-10 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-purple flex items-center justify-center text-white font-bold shadow-md shadow-cyber-cyan/10">
-                AI
+                KK
               </div>
               <div>
-                <h4 className="font-semibold text-sm text-slate-900 dark:text-white">Agentic Developer</h4>
+                <h4 className="font-semibold text-sm text-slate-900 dark:text-white">{profile.name}</h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400">Intern Portfolio</p>
               </div>
             </div>
@@ -226,10 +228,10 @@ export default function Sidebar({ darkMode, setDarkMode, isCollapsed, setIsColla
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-800/50"
             >
               <div className="h-10 w-10 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-purple flex items-center justify-center text-white font-bold shadow-md shadow-cyber-cyan/10">
-                AI
+                KK
               </div>
               <div>
-                <h4 className="font-semibold text-sm text-slate-900 dark:text-white leading-tight">Agentic AI Dev</h4>
+                <h4 className="font-semibold text-sm text-slate-900 dark:text-white leading-tight">{profile.name}</h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400">Internship 2026</p>
               </div>
             </motion.div>

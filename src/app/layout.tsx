@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Pinecone",
     "Internship Portfolio",
   ],
-  authors: [{ name: "Aiden Sterling" }],
+  authors: [{ name: "Kamran Khan" }],
   openGraph: {
     title: "Agentic AI Portfolio | Internship Dashboard 2026",
     description:

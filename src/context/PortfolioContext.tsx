@@ -37,47 +37,47 @@ interface PortfolioContextType {
 }
 
 const defaultProfile: ProfileData = {
-  name: "Aiden Sterling",
+  name: "Kamran Khan",
   title: "Agentic AI Developer",
-  bio: "Designing and deploying autonomous AI systems. Specialized in dynamic tool calling, multi-agent orchestrations, retrieval-augmented generation (RAG), and high-performance, glassmorphic control dashboards.",
-  linkedin: "https://linkedin.com/in/placeholder",
-  github: "https://github.com/placeholder",
-  email: "placeholder@email.com",
-  whatsapp: "+1 (234) 567-890",
+  bio: "Designing and deploying autonomous AI systems at Nexe Internship 2026. Specialized in dynamic tool calling, multi-agent orchestrations, retrieval-augmented generation (RAG), and high-performance, glassmorphic control dashboards.",
+  linkedin: "https://www.linkedin.com/in/kamran-khan-7138342b8",
+  github: "https://github.com/Kamrankhan787",
+  email: "kamrankhankhi5@gmail.com",
+  whatsapp: "+923362605888",
   resume: "#resume-placeholder",
-  portfolio: "https://vercel.example/portfolio"
+  portfolio: "https://projects-dashboard-mauve.vercel.app/"
 };
 
 const defaultProjectLinks: ProjectLinksMap = {
   "tool-calling-agent": {
-    github: "https://github.com/placeholder/tool-calling-agent",
-    demo: "https://vercel.example/tool-calling-agent",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/beginner-task-1",
+    demo: "https://github.com/Kamrankhan787/beginner-task-1",
+    video: "/videos/demo video of task 1.mp4"
   },
   "ai-calculator-agent": {
-    github: "https://github.com/placeholder/ai-calculator-agent",
-    demo: "https://vercel.example/ai-calculator-agent",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/beginner-task-2",
+    demo: "https://github.com/Kamrankhan787/beginner-task-2",
+    video: "/videos/demo video of task 2.mp4"
   },
   "multi-tool-agent": {
-    github: "https://github.com/placeholder/multi-tool-agent",
-    demo: "https://vercel.example/multi-tool-agent",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/intermediate-task-3",
+    demo: "https://github.com/Kamrankhan787/intermediate-task-3",
+    video: "/videos/demo video of task 3.mp4"
   },
   "rag-assistant": {
-    github: "https://github.com/placeholder/rag-assistant",
-    demo: "https://vercel.example/rag-assistant",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/intermediate-task-4",
+    demo: "https://intermediate-task-4-qjem.vercel.app/",
+    video: "/videos/demo video of task 4.mp4"
   },
   "autonomous-business-agent": {
-    github: "https://github.com/placeholder/autonomous-business-agent",
-    demo: "https://vercel.example/autonomous-business-agent",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/advance-task-5",
+    demo: "https://autonomous-business-agent-olive.vercel.app/",
+    video: "/videos/demo video of task 5.mp4"
   },
   "multi-agent-system": {
-    github: "https://github.com/placeholder/multi-agent-system",
-    demo: "https://vercel.example/multi-agent-system",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    github: "https://github.com/Kamrankhan787/advance-task-6",
+    demo: "https://advance-task-6.vercel.app/",
+    video: "/videos/demo video of task 6.mp4"
   }
 };
 

@@ -487,17 +487,37 @@ export default function ProjectModal({ project, onClose, initialTab = "overview"
             <div className="space-y-6">
               {/* Responsive Video Container */}
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black border border-slate-200/50 dark:border-slate-800/50">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={project.video}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                {!project.video ? (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-slate-950 text-slate-400">
+                    <Play size={40} className="text-cyber-cyan opacity-40 mb-3 animate-pulse" />
+                    <p className="text-sm font-semibold text-slate-350">No Video Demo Available</p>
+                    <p className="text-xs text-slate-500 mt-1 max-w-xs">A video recording of this task is not currently configured.</p>
+                  </div>
+                ) : project.video.endsWith(".mp4") || 
+                 project.video.endsWith(".webm") || 
+                 project.video.endsWith(".mov") || 
+                 project.video.startsWith("/videos/") ? (
+                  <video
+                    className="absolute inset-0 w-full h-full object-contain"
+                    src={project.video}
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                  />
+                ) : (
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={project.video}
+                    title="AI Demonstration Video Player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">
-                Note: This is a placeholder demonstration video. Replace the Youtube embed source inside the project schema to point to actual recording assets.
+                Demonstration screen capture showing the autonomous execution workflow of task.
               </p>
             </div>
           )}
