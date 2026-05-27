@@ -96,10 +96,26 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
       const storedLinks = localStorage.getItem("portfolio_project_links");
 
       if (storedProfile) {
-        setProfile(JSON.parse(storedProfile));
+        const parsed = JSON.parse(storedProfile);
+        if (parsed.name && parsed.name !== "Aiden Sterling" && !parsed.linkedin.includes("placeholder")) {
+          setProfile(parsed);
+        } else {
+          // Clear stale old data
+          localStorage.removeItem("portfolio_profile");
+        }
       }
       if (storedLinks) {
-        setProjectLinks(JSON.parse(storedLinks));
+        const parsed = JSON.parse(storedLinks);
+        // Only load if it's not full of default placeholders
+        const hasPlaceholder = Object.values(parsed).some((l: any) => 
+          l.github?.includes("placeholder") || l.video?.includes("dQw4w9WgXcQ")
+        );
+        if (!hasPlaceholder) {
+          setProjectLinks(parsed);
+        } else {
+          // Clear stale old links
+          localStorage.removeItem("portfolio_project_links");
+        }
       }
     } catch (e) {
       console.error("Failed to load portfolio settings from localStorage", e);
@@ -136,12 +152,26 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
 
   // Construct combined projects list
   const projects = projectsData.map((project) => {
-    const customLinks = projectLinks[project.id] || defaultProjectLinks[project.id];
+    const defaultLinks = defaultProjectLinks[project.id];
+    const customLinks = projectLinks[project.id] || {};
+
+    const github = !customLinks.github || customLinks.github.includes("placeholder")
+      ? defaultLinks.github
+      : customLinks.github;
+
+    const demo = !customLinks.demo || customLinks.demo.includes("placeholder")
+      ? defaultLinks.demo
+      : customLinks.demo;
+
+    const video = !customLinks.video || customLinks.video.includes("dQw4w9WgXcQ") || customLinks.video.includes("placeholder")
+      ? defaultLinks.video
+      : customLinks.video;
+
     return {
       ...project,
-      github: customLinks.github,
-      demo: customLinks.demo,
-      video: customLinks.video
+      github,
+      demo,
+      video
     };
   });
 
